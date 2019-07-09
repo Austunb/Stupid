@@ -5,12 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>B&A Website</title>
-    <link rel="stylesheet" href="../B&A-Website/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Notable|Russo+One&display=swap" rel="stylesheet">
+
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+}
+.navigation-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 11rem;
+    width: 100%;
+    background-color: rgb(111, 180, 176)
+}
+.bradens-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.title{
+    font-family: 'Notable', sans-serif;
+}
+.projects a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Russo One', sans-serif;
+    font-size: 18px;
+}
+.about-me a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Russo One', sans-serif;
+    font-size: 18px;
+}
+.inquires a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Russo One', sans-serif;
+    font-size: 18px;
+}
+.projects a:hover{
+    text-decoration: none;
+    color: purple;
+    font-family: 'Russo One', sans-serif;
+    font-size: 21px;
+    transition: 0.5s;
+}
+.about-me a:hover{
+    text-decoration: none;
+    color: purple;
+    font-family: 'Russo One', sans-serif;
+    font-size: 21px;
+}
+.inquires a:hover{
+    text-decoration: none;
+    color: purple;
+    font-family: 'Russo One', sans-serif;
+    font-size: 21px;
+}
+.bird-logo img {
+    height: 40px;
+    width: 60px;
+}
+.austuns-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+    
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-
+            <div class="navigation-bar">
+                <div class="bradens-side">
+                    <div class="title">
+                        <h2>Braden Bird</h2>
+                    </div>
+                    <div class="projects">
+                        <a href="#">Projects</a>
+                    </div>
+                    <div class="about-me">
+                        <a href="#">About Me</a>
+                    </div>
+                    <div class="inquires">
+                        <a href="#">Inquires</a>
+                    </div>
+                </div>
+                <div class="austuns-side">
+                    <div class="title">
+                        <h2>Austun Bird</h2>
+                    </div>
+                    <div class="projects">
+                        <a href="#">Projects</a>
+                    </div>
+                    <div class="about-me">
+                        <a href="#">About Me</a>
+                    </div>
+                    <div class="inquires">
+                        <a href="#">Inquires</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="middle-body">
