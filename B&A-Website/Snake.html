@@ -12,6 +12,7 @@ ax=ay=15;
 xv=yv=0;
 trail=[];
 tail = 5;
+score = s;
 function game() {
 	px+=xv;
 	py+=yv;
@@ -35,6 +36,7 @@ function game() {
 		ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
 		if(trail[i].x==px && trail[i].y==py) {
 			tail = 5;
+			s++;
 		}
 	}
 	trail.push({x:px,y:py});
@@ -67,3 +69,6 @@ function keyPush(evt) {
 	}
 }
 </script>
+<Body>
+	<text>Your score is </text> 
+</Body>
