@@ -1,3 +1,63 @@
+<link href="index.html">
+<link href="austunsprojects.html">
+<link href="https://fonts.googleapis.com/css?family=Notable|Russo+One&display=swap" rel="stylesheet">
+
+
+<head>
+	<style>
+		.button {
+			background-color: #ffffff;
+			border: solid;
+			color: black;
+			font-family: 'DM Serif Text', serif;
+			padding: 20px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			margin: 4px 2px;
+			cursor: pointer;
+			justify-content: space-evenly;
+			margin-left: 55vw;
+		}
+		.button1 {
+			background-color: #ffffff;
+			border: solid;
+			color: black;
+			font-family: 'DM Serif Text', serif;
+			padding: 20px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			margin: 4px 2px;
+			cursor: pointer;
+			justify-content: space-evenly;
+		}
+		.title{
+			font-family: 'Notable', sans-serif;
+			color: #938f57;
+			font-size: 35px;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+		.navigation-bar {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			height: 9rem;
+			width: 100%;
+			background-color: white;
+		}
+	</style>
+</head>
+<Body>
+	<div class="navigation-bar">
+		<div class="title">
+			<h2>Snake</h2>
+		</div>
+	</div>
+
 <center><canvas id="pc" width="400" height="400"></canvas></center>
 <script>
 window.onload=function() {
@@ -12,7 +72,6 @@ ax=ay=15;
 xv=yv=0;
 trail=[];
 tail = 5;
-score = s;
 function game() {
 	px+=xv;
 	py+=yv;
@@ -36,7 +95,6 @@ function game() {
 		ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
 		if(trail[i].x==px && trail[i].y==py) {
 			tail = 5;
-			s++;
 		}
 	}
 	trail.push({x:px,y:py});
@@ -68,7 +126,46 @@ function keyPush(evt) {
 			break;
 	}
 }
+function text(txt, fnt, x, y, c) {
+	context.fillStyle = c;
+	context.font = fnt;
+	context.fillText(txt, x, y);
+}
+
+
+	var score = 0;
+	var scoreboard = document.getElementById('scoreboard');
+	for(var p=0;p<score;p++){
+		score = score + 1;
+		scoreboard.innerHTML = "The Score is: " + score;
+	}
+
+	var myScore;
+	myScore = new component("30px", "Consolas", "lime", 280, 40, "text");
+	myScore.text = "SCORE: " + point1;
+		myScore.update();
+
+
+	function drawScore() {
+		ctx.font = "16px Arial";
+		ctx.fillStyle = "#0095DD";
+		ctx.fillText("Score: "+score, 8, 20);
+	}
+
+	function collisionDetection() {
+		if(tail>5) {
+			score++;
+		}
+	}
+
+
 </script>
-<Body>
-	<text>Your score is </text> 
+
+	<div style="font-size:50px;">
+		Score : 
+		<span id="drawScore()">0</span>
+
+		<a href="index.html" class="button">Home Page</a>
+		<a href="austunsprojects.html" class="button1">Austun's Projects</a>
+	</div>
 </Body>
