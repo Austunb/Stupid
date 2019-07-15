@@ -15,22 +15,7 @@
 			text-decoration: none;
 			display: inline-block;
 			font-size: 20px;
-			margin: 4px 2px;
-			cursor: pointer;
-			justify-content: space-evenly;
-			margin-left: 54vw;
-		}
-		.button1 {
-			background-color: #ffffff;
-			border: solid;
-			color: black;
-			font-family: 'DM Serif Text', serif;
-			padding: 20px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 20px;
-			margin: 4px 2px;
+			margin: 4px 10px;
 			cursor: pointer;
 			justify-content: space-evenly;
 		}
@@ -51,7 +36,7 @@
 		}
 	</style>
 </head>
-<Body>
+<Body scroll="no" style="overflow: hidden">
 	<div class="navigation-bar">
 		<div class="title">
 			<h2>Snake</h2>
@@ -72,6 +57,7 @@ ax=ay=15;
 xv=yv=0;
 trail=[];
 tail = 5;
+point1 = 0;
 function game() {
 	px+=xv;
 	py+=yv;
@@ -104,11 +90,14 @@ function game() {
 
 	if(ax==px && ay==py) {
 		tail++;
+		point1++;
 		ax=Math.floor(Math.random()*tc);
 		ay=Math.floor(Math.random()*tc);
 	}
 	ctx.fillStyle="red";
 	ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+	myScore.text = "SCORE: " + point1;
+	myScore.update();
 }
 function keyPush(evt) {
 	switch(evt.keyCode) {
@@ -140,10 +129,9 @@ function text(txt, fnt, x, y, c) {
 		scoreboard.innerHTML = "The Score is: " + score;
 	}
 
-	var myScore;
 	myScore = new component("30px", "Consolas", "lime", 280, 40, "text");
 	myScore.text = "SCORE: " + point1;
-		myScore.update();
+	myScore.update();
 
 
 	function drawScore() {
@@ -158,14 +146,11 @@ function text(txt, fnt, x, y, c) {
 		}
 	}
 
-
 </script>
-
 	<div style="font-size:50px;">
 		Score : 
-		<span id="drawScore()">0</span>
-
-		<a href="index.html" class="button">Home Page</a>
-		<a href="austunsprojects.html" class="button1">Austun's Projects</a>
+		<span id="point1"></span>
+		<a href="index.html" class="button"style="float: right;">Home Page</a>
+		<a href="austunsprojects.html" class="button"style="float: right;">Austun's Projects</a>
 	</div>
 </Body>
